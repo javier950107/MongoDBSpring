@@ -11,6 +11,6 @@ public interface VideogameRepository {
     Videogame insertVideogame(Videogame videogame);
     List<Videogame> getAllVideogames();
     Videogame findById(int id);
-    String updateVideogame(Videogame videogame);
+    Videogame updateVideogame(Videogame videogame);
     void deleteVideogameById(int id);
 }

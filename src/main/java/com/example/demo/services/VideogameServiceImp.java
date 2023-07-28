@@ -30,8 +30,8 @@ public class VideogameServiceImp implements VideogameService{
         Videogame videogameFound = videogameRepository.findById(videogame.getId());
 
         if (!videogameFound.equals(null)){
-            String idUpdated = videogameRepository.updateVideogame(videogameFound);
-            return videogameRepository.findById(Integer.valueOf(idUpdated));
+            Videogame videogameUpdated = videogameRepository.updateVideogame(videogame);
+            return videogameUpdated;
         }
 
         return null;
@@ -39,8 +39,7 @@ public class VideogameServiceImp implements VideogameService{
 
     @Override
     public void deleteVideogameById(int id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteVideogameById'");
+        videogameRepository.deleteVideogameById(id);
     }
     
 }
