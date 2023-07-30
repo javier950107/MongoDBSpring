@@ -27,7 +27,9 @@ public class UserServiceImp implements UserService{
 
     @Override
     public void deleteUserById(long id) {
-        userRepository.deleteById(id);
+        if (userRepository.findById(id).isPresent()){
+            userRepository.deleteById(id);
+        }
     }
 
     @Override
